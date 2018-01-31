@@ -1,46 +1,79 @@
-# Hugo template for Netlify CMS with Netlify Identity
+# Urban
 
-This is a small business template built with [Victor Hugo](https://github.com/netlify/victor-hugo) and [Netlify CMS](https://github.com/netlify/netlify-cms), designed and developed by [Darin Dimitroff](http://www.darindimitroff.com/), [spacefarm.digital](https://www.spacefarm.digital).
+Web Agency themed business template for Jekyll. Browse through a [live demo](https://teal-worm.cloudvent.net/).
+Increase the web presence of your agency with this configurable theme.
 
-## Getting started
+![Urban template screenshot](images/_screenshot.png)
 
-Use our deploy button to get your own copy of the repository. 
+Urban was made by [CloudCannon](http://cloudcannon.com/), the Cloud CMS for Jekyll.
+Find more templates and themes at [Jekyll Tips](http://jekyll.tips/templates/).
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify-templates/one-click-hugo-cms&stack=cms)
+Learn Jekyll with step-by-step tutorials and videos at [Jekyll Tips](http://jekyll.tips/).
 
-This will setup everything needed for running the CMS:
+## Features
 
-* A new repository in your GitHub account with the code
-* Full Continuous Deployment to Netlify's global CDN network
-* Control users and access with Netlify Identity
-* Manage content with Netlify CMS
+* Contact form
+* Pre-built pages
+* Pre-styled components
+* Blog with pagination
+* Post category pages
+* Disqus comments for posts
+* Staff and author system
+* Configurable footer
+* Optimised for editing in [CloudCannon](http://cloudcannon.com/)
+* RSS/Atom feed
+* SEO tags
+* Google Analytics
 
-Once the initial build finishes, you can invite yourself as a user. Go to the Identity tab in your new site, click "Invite" and send yourself an invite.
+## Setup
 
-Now you're all set, and you can start editing content!
+1. Add your site and author details in `_config.yml`.
+2. Add your Google Analytics and Disqus keys to `_config.yml`.
+3. Get a workflow going to see your site's output (with [CloudCannon](https://app.cloudcannon.com/) or Jekyll locally).
 
-## Local Development
+## Develop
 
-Clone this repository, and run `yarn` or `npm install` from the new folder to install all required dependencies.
+Urban was built with [Jekyll](http://jekyllrb.com/) version 3.3.1, but should support newer versions as well.
 
-Then start the development server with `yarn start` or `npm start`.
+Install the dependencies with [Bundler](http://bundler.io/):
 
-## Layouts
+~~~bash
+$ bundle install
+~~~
 
-The template is based on small, content-agnostic partials that can be mixed and matched. The pre-built pages showcase just a few of the possible combinations. Refer to the `site/layouts/partials` folder for all available partials.
+Run `jekyll` commands through Bundler to ensure you're using the right versions:
 
-Use Hugo’s `dict` functionality to feed content into partials and avoid repeating yourself and creating discrepancies.
+~~~bash
+$ bundle exec jekyll serve
+~~~
 
-## CSS
+## Editing
 
-The template uses a custom fork of Tachyons and PostCSS with cssnext and cssnano. To customize the template for your brand, refer to `src/css/imports/_variables.css` where most of the important global variables like colors and spacing are stored.
+Urban is already optimised for adding, updating and removing pages, staff, advice, company details and footer elements in [CloudCannon](https://app.cloudcannon.com/).
 
-## SVG
+### Posts
 
-All SVG icons stored in `site/static/img/icons` are automatically optimized with SVGO (gulp-svgmin) and concatenated into a single SVG sprite stored as a a partial called `svg.html`. Make sure you use consistent icons in terms of viewport and art direction for optimal results. Refer to an SVG via the `<use>` tag like so:
+* Add, update or remove a post in the *Posts* collection.
+* The **Staff Author** field links to members in the **Staff** collection.
+* Documentation pages are organised in the navigation by category, with URLs based on the path inside the `_docs` folder.
+* Change the defaults when new posts are created in `_posts/_defaults.md`.
 
-```
-<svg width="16px" height="16px" class="db">
-  <use xlink:href="#SVG-ID"></use>
-</svg>
-```
+### Contact Form
+
+* Preconfigured to work with [CloudCannon](https://app.cloudcannon.com/), but easily changed to another provider (e.g. [FormSpree](https://formspree.io/)).
+* Sends email to the address listed in company details.
+
+### Staff
+
+* Reused around the site to save multiple editing locations.
+* Add `excluded_in_search: true` to any documentation page's front matter to exclude that page in the search results.
+
+### Footer
+
+* Exposed as a data file to give clients better access.
+* Set in the *Data* / *Footer* section.
+
+### Company details
+
+* Reused around the site to save multiple editing locations.
+* Set in the *Data* / *Company* section.
